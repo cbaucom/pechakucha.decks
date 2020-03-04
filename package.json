@@ -1,0 +1,44 @@
+{
+  "name": "pechakucha-decks",
+  "private": true,
+  "description": "pechakucha.decks",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "CB",
+  "keywords": [
+    "gatsby",
+    "mdx",
+    "mdx-deck",
+    "netlify"
+  ],
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "form-serialize": "^0.7.2",
+    "gatsby": "^2.15.2",
+    "gatsby-image": "^2.2.23",
+    "gatsby-theme-mdx-deck": "^3.0.9",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbaucom/pechakucha.decks"
+  },
+  "bugs": {
+    "url": "https://github.com/cbaucom/pechakucha.decks/issues"
+  }
+}

@@ -1,0 +1,48 @@
+import Layout from '../components/Layout'
+
+# Course curriculum
+
+<SplitRight>
+<div>
+	<h3>Advertised</h3>
+	<ul>
+		<li>What it means to be "declarative"</li>
+		<li>What it means to be "composable"</li>
+		<li>Component state management</li>
+		<li>Predicatable state management with "reducers"</li>
+		<li>Shared application state</li>
+		<li>State ownership with "controlled" and "uncontrolled" components</li>
+		<li>Adding non-visual behavior with effects</li>
+		<li>Navigating pages with React Router</li>
+		<li>Application data flow</li>
+		<li>Working with data and REST APIs</li>
+		<li>How to share visual elements of the app</li>
+		<li>How to share non-visual behavior</li>
+		<li>How to avoid race condition bugs in effects</li>
+		<li>All the new "hooks" APIs</li>
+	</ul>
+</div>
+
+<div>
+	<h3>Reality</h3>
+	<ul>
+		<li>What it means to be "declarative"</li>
+		<li>What it means to be "composable"</li>
+		<li>Component state management</li>
+		<li>Predicatable state management with "reducers"</li>
+		<li>Shared application state</li>
+		<li>State ownership with "controlled" and "uncontrolled" components</li>
+		<li>Adding non-visual behavior with effects</li>
+		<li>Navigating pages with React Router</li>
+		<li style="text-decoration: line-through;">Application data flow</li>
+		<li style="text-decoration: line-through;">Working with data and REST APIs</li>
+		<li style="text-decoration: line-through;">How to share visual elements of the app</li>
+		<li style="text-decoration: line-through;">How to share non-visual behavior</li>
+		<li style="text-decoration: line-through;">How to avoid race condition bugs in effects</li>
+		<li>Some of the new "hooks" APIs</li>
+	</ul>
+</div>
+</SplitRight>
+
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>

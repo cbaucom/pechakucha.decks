@@ -1,0 +1,35 @@
+import Layout from '../components/Layout'
+import EffectExample from '../components/EffectExample'
+
+```
+function useMediaQuery(query) {
+  const [isWide, setIsWide] = useState(window.matchMedia(query).matches)
+
+  // Subscribe to media query
+  useEffect(() => {
+    const media = window.matchMedia(query)
+
+    const listener = event => setIsWide(event.matches)
+    media.addListener(listener)
+
+    // cleanup
+    return () => media.removeListener(listener)
+  }, [query])
+
+  return isWide
+}
+
+// ...
+const query = "(min-width: 1000px)"
+let isWide = useMediaQuery(query)
+
+{isWide && (
+  <aside style={{ backgroundColor: "green", width: "100%" }}>
+    <div>Sidebar</div>
+  </aside>
+)}
+```
+
+<EffectExample />
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>

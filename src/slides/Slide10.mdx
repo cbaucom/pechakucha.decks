@@ -1,0 +1,23 @@
+import Layout from '../components/Layout'
+import AppearText from '../components/AppearText'
+
+<AppearText>
+  Effects
+</AppearText>
+
+- `useEffect`
+- Format: `useEffect(callbackFunction, [dependencyArray])`
+- `useEffect` is used for side effects. Typically this means we want to do something outside of our component, like a network request or perhaps with cookies/localstorage, and we want to do that side effect any time state changes.
+- The effect callback runs when the component first mounts and then anytime the values in the dependency array change. Having an empty dependency array is a way to ensure the effect only runs once.
+- However, be careful, any variables that your effect uses (depends on) need to be stated in your dependency array. With the older mental model of time and `componentDidMount`, we thought in terms of "this just needs to happen once when we mount". But now with `useEffect` we need to think in terms of "anytime state changes, what do I need to do". Therefore you'll probably need to put values in your dependency array often.
+
+```js
+useEffect(fn) // runs when a component mounts, and any state changes
+useEffect(fn, []) // runs just when a component mounts
+useEffect(fn, [some, example, state]) // runs when a component mounts, and when `some` or `example` or `state` changes.
+```
+
+- Avoid infinite loops: If an effect has no dependency array and also sets state, this will cause an infinite loop. Imagine that the component mounts which calls the effect. Then state is changed which leads to a re-render which means the effect will be called again because there was no dependency array telling react not to run the effect again. Then since the effect runs again and sets state, this creates an infinite loop.
+- In the callback for the effect, you can either return no value or return a function. If a function is returned, it's said to be the "cleanup function". This function is called when the component unmounts or when the dependency array changes.
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>

@@ -1,0 +1,41 @@
+import Layout from '../components/Layout'
+import CheckoutBilling from '../components/CheckoutBilling'
+
+  ```js
+  const [sameAsBilling, setSameAsBilling] = useState(false)
+
+  <label>
+    <input
+      type="checkbox"
+      defaultChecked={sameAsBilling}
+      onChange={() => setSameAsBilling(!sameAsBilling)}
+    />{' '}
+    Same as Billing
+  </label>
+  {!sameAsBilling && (
+    <div className="spacing">
+      <div className="form-field">
+        <label htmlFor="shipping:name">Name</label>
+        <input
+          id="shipping:name"
+          type="text"
+          name="shippingName"
+          autoComplete="off"
+        />
+      </div>
+      <div className="form-field">
+        <label htmlFor="shipping:address">Address</label>
+        <input
+          id="shipping:address"
+          type="text"
+          name="shippingAddress"
+          autoComplete="off"
+        />
+      </div>
+    </div>
+  )}
+  ```
+
+  <CheckoutBilling />
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>

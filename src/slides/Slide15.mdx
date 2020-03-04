@@ -1,0 +1,12 @@
+import Layout from '../components/Layout'
+import AppearText from '../components/AppearText'
+import reactMemoCode from '../../static/React.memo.code.png'
+import reactMemoDemo from '../../static/react.memo.demo.gif'
+
+<SplitRight>
+	<img src={reactMemoCode} alt="React Memo code" width="60%" />
+<img src={reactMemoDemo} alt="React Memo demo" width="100%"/>
+</SplitRight>
+
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>

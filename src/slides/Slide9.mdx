@@ -1,0 +1,73 @@
+import Layout from '../components/Layout'
+import CheckoutBilling2 from '../components/CheckoutBilling2'
+
+```
+const [sameAsBilling, setSameAsBilling] = useState(false)
+  const [billingName, setBillingName] = useState('')
+  const [billingAddress, setBillingAddress] = useState('')
+  const [shippingName, setShippingName] = useState('')
+  const [shippingAddress, setShippingAddress] = useState('')
+
+  <div className="form-field">
+    <label htmlFor="billing:name">Name</label>
+    <input
+      id="billing:name"
+      type="text"
+      required
+      defaultValue={billingName}
+      onChange={event => setBillingName(event.target.value)}
+    />
+  </div>
+  <div className="form-field">
+    <label htmlFor="billing:address">Address</label>
+    <input
+      id="billing:address"
+      type="text"
+      required
+      defaultValue={billingAddress}
+      onChange={event => setBillingAddress(event.target.value)}
+    />
+  </div>
+
+  <Heading as="h2" size={3}>
+    Shipping Info
+  </Heading>
+
+  <label>
+    <input
+      type="checkbox"
+      defaultChecked={sameAsBilling}
+      onChange={() => setSameAsBilling(!sameAsBilling)}
+    />{' '}
+    Same as Billing
+  </label>
+
+  <div className="form-field">
+    <label htmlFor="shipping:name">Name</label>
+    <input
+      id="shipping:name"
+      type="text"
+      required
+      value={sameAsBilling ? billingName : shippingName}
+      onChange={event => setShippingName(event.target.value)}
+      disabled={sameAsBilling}
+    />
+  </div>
+  <div className="form-field">
+    <label htmlFor="shipping:address">Address</label>
+    <input
+      id="shipping:address"
+      type="text"
+      required
+      value={sameAsBilling ? billingAddress : shippingAddress}
+      onChange={event => setShippingAddress(event.target.value)}
+      disabled={sameAsBilling}
+    />
+  </div>
+```
+
+<CheckoutBilling2 />
+
+#### Tip: Remember, a field is said to be "controlled" if it has a `value` prop (which means it also needs an `onChange`). However, in some cases a field could have an `onChange` without a `value` prop and that would NOT be considered "controlled" since it doesn't have a `value` prop.
+
+export default ({ children }) => <Layout title="React Training">{ children }</Layout>
