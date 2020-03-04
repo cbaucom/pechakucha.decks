@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
 
 function useMediaQuery(query) {
-  const [isWide, setIsWide] = useState(window.matchMedia(query).matches)
+  const hasWindow = typeof window !== "undefined" && window.matchMedia(query)
+  const [isWide, setIsWide] = useState(hasWindow.matches)
 
   // Subscribe to media query
   useEffect(() => {
-    const media = window.matchMedia(query)
+    const media = hasWindow
 
     const listener = event => setIsWide(event.matches)
     media.addListener(listener)
